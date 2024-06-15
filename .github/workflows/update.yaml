@@ -24,4 +24,4 @@ jobs:
           yarn
         fi
         ./build.sh
-    - uses: stefanzweifel/git-auto-commit-action@v4
+    - uses: stefanzweifel/git-auto-commit-action@v5.0.1
