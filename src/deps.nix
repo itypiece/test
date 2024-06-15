@@ -7,7 +7,7 @@ let
 in deps: buildNpmPackage {
   name = "koishi";
   makeCacheWritable = true;
-  npmFlags = [ "--legacy-peer-deps", "--no-cache" ];
+  npmFlags = [ "--legacy-peer-deps" "--no-cache" ];
   inherit (hash) npmDepsHash;
   dontNpmBuild = true;
   src = runCommand "deps" {} ''
