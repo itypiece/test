@@ -14,6 +14,7 @@ let
   hash = import ../generated/hash.nix;
 in deps: buildNpmPackage {
   name = "koishi";
+  makeCacheWritable = true;
   npmFlags = [ "--ignore-scripts" "--legacy-peer-deps" ];
   inherit (hash) npmDepsHash;
   # npmDepsHash = "sha256-vnjzIHl6MIDxKh8TM/GtJwbMlwni9DT5lmewtb4Y7bI=";
