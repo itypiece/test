@@ -1,12 +1,4 @@
-{
-fetchFromGitHub,
-buildNpmPackage,
-writeTextDir,
-runCommand,
-writeText,
-lib,
-...
-}:
+{ lib, fetchFromGitHub, buildNpmPackage, writeTextDir, runCommand, writeText }:
 
 with lib;
 
@@ -15,9 +7,8 @@ let
 in deps: buildNpmPackage {
   name = "koishi";
   makeCacheWritable = true;
-  npmFlags = [ "--legacy-peer-deps" ];
+  npmFlags = [ "--legacy-peer-deps", "--no-cache" ];
   inherit (hash) npmDepsHash;
-  # npmDepsHash = "sha256-vnjzIHl6MIDxKh8TM/GtJwbMlwni9DT5lmewtb4Y7bI=";
   dontNpmBuild = true;
   src = runCommand "deps" {} ''
     mkdir -p $out
