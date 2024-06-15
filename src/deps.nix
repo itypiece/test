@@ -14,7 +14,7 @@ let
   hash = import ../generated/hash.nix;
 in deps: buildNpmPackage {
   name = "koishi";
-  npmFlags = [ "--ignore-scripts" ];
+  npmFlags = [ "--ignore-scripts" "--legacy-peer-deps" ];
   inherit (hash) npmDepsHash;
   # npmDepsHash = "sha256-vnjzIHl6MIDxKh8TM/GtJwbMlwni9DT5lmewtb4Y7bI=";
   dontNpmBuild = true;
