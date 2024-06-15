@@ -15,10 +15,6 @@
         ])}
 
         cd locker
-        if [ ! -d node_modules ]; then
-          yarn
-        fi
-        ./build.sh
         cp ./lock/* ../generated
         cd ..
 
