@@ -14,10 +14,6 @@
           prefetch-npm-deps nodejs yarn
         ])}
 
-        cd locker
-        cp ./lock/* ../generated
-        cd ..
-
         npmDepsHash=$(prefetch-npm-deps ./generated/package-lock.json)
         cat > ./generated/hash.nix <<EOF
         {
