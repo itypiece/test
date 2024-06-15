@@ -20,6 +20,11 @@ jobs:
       run: |
         nix flake update
         nix run .#update
+        cd locker
+        if [ ! -d node_modules ]; then
+          yarn
+        fi
+        ./build.sh
     - name: build
       run: |
         nix build .
